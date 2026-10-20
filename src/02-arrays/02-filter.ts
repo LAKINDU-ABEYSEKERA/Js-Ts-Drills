@@ -17,25 +17,25 @@ console.log(evens);
 
 // 02 only numbers > 2 >>> expected : [3 , 4 , 5]
 
-const array = num.filter((n) => (n > 2));
-console.log(array);
+const evenNum = num.filter((n) => (n > 2));
+console.log(evenNum);
 
 // 03 only words longer than length 4 >>> expected : [hello, beautiful , amazing]
 
-const array02 = words.filter((n) => n.length > 4);
-console.log(array02);
+const longWords = words.filter((n) => n.length > 4);
+console.log(longWords);
 
 // 04 only kumara >>> expected : [{kumara,22}]
 
-const array03 = people.filter((n) => (n.name.toLowerCase() === "kumara"));
-console.log(array03);
+const findKumara = people.filter((n) => (n.name.toLowerCase() === "kumara"));
+console.log(findKumara);
 
 // 05 only age > 20 >>> expected : [{ name: "Kumara", age: 22 }, { name: "Wimal", age: 25 }]
 
-const array04 = people.filter((n) => (n.age > 20));
-console.log(array04);
+const biggerThan20 = people.filter((n) => (n.age > 20));
+console.log(biggerThan20);
 
 // 06 only age lower than 23 >>> expected : [{ name: 'Saman', age: 19 }, { name: 'Kumara', age: 22 }]
 
-const array05 = people.filter((n) => (n.age < 23));
-console.log(array05);
+const lowerThan23 = people.filter((n) => (n.age < 23));
+console.log(lowerThan23);
