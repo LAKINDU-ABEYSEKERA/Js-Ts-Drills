@@ -313,13 +313,26 @@ console.log(departArray);
 
 const totalOfEverything = employees.reduce((accumulator , employee) => {
     accumulator.totalEmployees++;
-    accumulator.;
-    (accumulator + employee.salary) % 3;
-    if(accumulator < employee.salary) {
-        accumulator = employee.salary;
-        return accumulator
+    accumulator.totalSalary += employee.salary;
+
+    (accumulator.averageSalary + employee.salary) % 3;
+    
+    if(accumulator.highestSalary < employee.salary) {
+        accumulator.highestSalary = employee.salary;
     } 
 
     return accumulator
 
-},{} as Record<{totalEmployees : number},{totalSalary : number},{averageSalary : number},{highestSalary: number}>)
+},{
+    totalEmployees: 0,
+    totalSalary: 0,
+    averageSalary: 0,
+    highestSalary: 0
+} as {
+    totalEmployees : number,
+    totalSalary : number,
+    averageSalary : number,
+    highestSalary: number
+});
+
+console.log(totalOfEverything);
