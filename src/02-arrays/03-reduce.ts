@@ -229,3 +229,97 @@ let workers = employees.reduce((accumulator,n) => {
 }>);
 
 console.log(workers);
+
+
+
+
+
+
+// 08. Calculate the total salary of all employees. 
+// 
+// Expected output: 300000 
+// 
+// 
+// // Hint: 
+// 
+// Your accumulator should be a number. 
+// 
+// Use the salary attribute of each employee. 
+//
+// 
+// 
+// Write your code below:
+
+const totalSalary = employees.reduce((accumulator, employee) => {
+    return accumulator + employee.salary;
+},0)
+
+console.log(totalSalary);
+
+
+
+// 09. Group employee names by department. 
+// // 
+// // Expected output: 
+// 
+// 
+// 
+// { // IT: ["Ravi", "Nadeesha"], 
+// 
+// HR: ["Saman"] // } // 
+// // Hint: 
+// 
+// Your accumulator should be an object containing arrays. 
+// 
+// If a department does not exist yet, create an empty array. 
+// 
+// Add the employee's name to the correct department. // 
+//
+// Write your code below:
+const departArray = employees.reduce((accumulator, employee) => {
+
+    if (!accumulator[employee.department]) {
+        accumulator[employee.department] = [];
+    }
+
+    (accumulator[employee.department] ?? []).push(employee.name);
+
+    return accumulator;
+
+}, {} as Record<string, string[]>);
+
+console.log(departArray);
+
+
+// ============================================= // CHALLENGE LEVEL // ============================================= 
+// 
+// 10. Create a summary object containing FOUR calculated attributes: // // totalEmployees // totalSalary // averageSalary // highestSalary // 
+// 
+// Expected output: // // { // totalEmployees: 3, // totalSalary: 300000, // averageSalary: 100000, // highestSalary: 120000 // } // 
+// 
+// Rules: // - You must use reduce(). 
+// 
+// - Use an object as the accumulator. 
+// 
+// - Calculate all four values during the reduce operation. 
+// 
+// - Do not use separate loops or another reduce() call. // 
+// // Hint: 
+// 
+// Your accumulator starts with an object containing all four properties. /
+// / Update the properties as each employee is processed. // 
+// 
+// Write your code below:
+
+const totalOfEverything = employees.reduce((accumulator , employee) => {
+    accumulator.totalEmployees++;
+    accumulator.;
+    (accumulator + employee.salary) % 3;
+    if(accumulator < employee.salary) {
+        accumulator = employee.salary;
+        return accumulator
+    } 
+
+    return accumulator
+
+},{} as Record<{totalEmployees : number},{totalSalary : number},{averageSalary : number},{highestSalary: number}>)
